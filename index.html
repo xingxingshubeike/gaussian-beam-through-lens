@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gaussian Beam Through Lens Visualization</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>高斯光束经过透镜的可视化 (Gaussian Beam Through Lens)</h1>
+    <div class="container">
+      <div class="controls">
+        <h2>输入参数 (Input Parameters)</h2>
+        <div class="input-group">
+          <label for="lambda">波长 (λ) (nm):</label>
+          <input type="number" id="lambda" value="780" min="1" step="any" />
+        </div>
+        <div class="input-group">
+          <label for="focalLength">透镜焦距 (f) (mm):</label>
+          <input
+            type="number"
+            id="focalLength"
+            value="100"
+            min="0.001"
+            step="any"
+          />
+        </div>
+        <div class="input-group">
+          <label for="s">输入束腰位置 (s) (mm):</label>
+          <input type="number" id="s" value="100" />
+        </div>
+        <div class="input-group">
+          <label for="w0">输入束腰半径 (w₀) (mm):</label>
+          <input type="number" id="w0" value="1" min="0.001" step="any" />
+        </div>
+
+        <h2>计算结果 (Calculated Outputs)</h2>
+        <div class="output-group">
+          <p>输出束腰位置 (s'): <span id="s-prime-out"></span> mm</p>
+          <p>输出束腰半径 (w₀'): <span id="w0-prime-out"></span> mm</p>
+          <p>输入瑞利长度 (zʀ): <span id="zr-in-out"></span> mm</p>
+          <p>输出瑞利长度 (zʀ'): <span id="zr-prime-out"></span> mm</p>
+          <p>输入发散角 (θ): <span id="theta-in-out"></span> mrad</p>
+          <p>输出发散角 (θ'): <span id="theta-prime-out"></span> mrad</p>
+        </div>
+      </div>
+      <div class="visualization">
+        <canvas id="beamCanvas" width="800" height="400"></canvas>
+      </div>
+    </div>
+    <script src="visualization.js"></script>
+  </body>
+</html>
